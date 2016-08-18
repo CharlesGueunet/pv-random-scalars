@@ -1,0 +1,42 @@
+<ServerManagerConfiguration>
+  <ProxyGroup name="filters">
+   <SourceProxy name="RandomScalars" class="vtkRandomScalars" label="Random Scalars">
+     <Documentation
+        long_help="Random attibutes on vertices, 0-MaxValue"
+        short_help="Custom RandomAttibutes">
+        This is a hand-made version of the custom attribute.
+        It allows to have real-random fields even on the --state flag
+     </Documentation>
+
+     <InputProperty
+        name="Input"
+        command="SetInputConnection">
+           <ProxyGroupDomain name="groups">
+             <Group name="sources"/>
+             <Group name="filters"/>
+           </ProxyGroupDomain>
+           <DataTypeDomain name="input_type">
+             <DataType value="vtkDataSet"/>
+           </DataTypeDomain>
+      </InputProperty>
+
+      <IntVectorProperty
+          name="Max value"
+          command="SetMaxValue"
+          number_of_elements="1"
+          default_values="100">
+          <IntRangeDomain name="range" min="0" max="200" />
+          <Documentation>
+              Max for the random generation
+          </Documentation>
+      </IntVectorProperty>
+
+
+      <Hints>
+          <ShowInMenu category="common" />
+      </Hints>
+
+   </SourceProxy>
+ </ProxyGroup>
+</ServerManagerConfiguration>
+
