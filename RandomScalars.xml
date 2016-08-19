@@ -33,7 +33,7 @@
 
 
       <Hints>
-          <ShowInMenu category="common" />
+          <ShowInMenu category="Common" />
       </Hints>
 
    </SourceProxy>
