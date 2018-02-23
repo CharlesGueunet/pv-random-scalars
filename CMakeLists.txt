@@ -15,6 +15,13 @@ endif()
 
 include(ParaViewPlugins)
 
+# Set a predefined build type
+if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+   message(STATUS "Setting build type to 'Release'.")
+   set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build." FORCE)
+   set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release")
+endif()
+
 # create a paraview plugin containing server manager xml and the server
 # manager classes to build
 # this plugin can be loaded on the server side
