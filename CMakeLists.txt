@@ -30,3 +30,4 @@ add_paraview_plugin(RandomScalars "1.0"
     SERVER_MANAGER_XML RandomScalars.xml
     SERVER_MANAGER_SOURCES vtkRandomScalars.cxx)
 
+ install(TARGETS RandomScalars DESTINATION ${CMAKE_INSTALL_PREFIX})
